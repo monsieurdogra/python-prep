@@ -481,7 +481,7 @@ pre.code .c{color:var(--code-dim)}
 .q-body{font-size:15.5px}
 .q-body p{margin:0 0 8px}
 .opts{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
-.opts label{display:grid;grid-template-columns:22px 1fr;gap:8px;align-items:start;padding:8px 10px;border:1px solid var(--line);border-radius:8px;cursor:pointer}
+.opts label{display:grid;grid-template-columns:22px minmax(0,1fr);gap:8px;align-items:start;padding:8px 10px;border:1px solid var(--line);border-radius:8px;cursor:pointer}
 .opts label:hover{background:var(--surface-2)}
 .opts input{margin-top:3px;accent-color:var(--accent)}
 .opts li.right label{border-color:var(--good);background:var(--good-soft)}
@@ -741,6 +741,25 @@ code.pre{white-space:pre;display:inline-block;vertical-align:top;font-family:var
 ol.traps li{margin:8px 0;line-height:1.5}
 table.errs td{vertical-align:top;font-size:14px} table.errs td code{white-space:normal;word-break:break-word}
 .console[hidden],.sol[hidden]{display:none}
+
+/* ---- phone fixes ---- */
+.q-body code,.prose code,.blk code:not(.pre){overflow-wrap:anywhere}
+.opts label>span{min-width:0}
+.opts code.pre{max-width:100%;overflow-x:auto;white-space:pre}
+.tblwrap{overflow-x:auto;max-width:100%}
+.CodeMirror textarea{font-size:16px}
+@media (max-width:640px){
+  input,select,textarea{font-size:16px}
+  details.stdin textarea{font-size:16px}
+  .mockbar{position:static;padding:8px 10px;gap:8px}
+  .mockbar .toggle{font-size:12.5px}
+  .mockbar .timer{font-size:15px}
+  #chatfab{padding:8px 13px;font-size:13px;opacity:.95}
+  .q-body table{font-size:13px}
+  .q-body th,.q-body td{padding:4px 6px}
+  ul.tests pre{font-size:12px}
+  .lnav-b{padding:8px 0}
+}
 </style>
 </head>
 <body>
